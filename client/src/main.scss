@@ -1,10 +1,9 @@
 // Base
-@use "./styles/base/reset";
-@use "./styles/base/variables";
+@use "./styles//base/reset";
+@use "./styles//base/base";
+@use "./styles//base/variables";
 
 // Components
-@use "./styles/components/navbar";
-@use "./styles/components/footer";
-
-// Pages
-@use "./styles/layout/home";
+@use "./styles/components/app";
+@use "./styles/components/sidebar";
+@use "./styles/components/header";

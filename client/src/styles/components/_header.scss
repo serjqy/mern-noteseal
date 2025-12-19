@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid var(--color-muted);
+
+  &__search {
+    border: 1px solid var(--color-muted);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    color: var(--color-muted);
+  }
+}
+
+.searchBar {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 300px;
+
+  &::placeholder {
+    color: var(--color-muted);
+  }
+}

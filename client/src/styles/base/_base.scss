@@ -1,0 +1,53 @@
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  // padding: 0 1rem;
+
+  // Tablet / small laptop
+  @media (max-width: 1024px) {
+    max-width: 992px;
+  }
+
+  // Big phone / tablet portrait
+  @media (max-width: 768px) {
+    max-width: 736px;
+  }
+
+  // Small phone
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+.btn-secondary {
+  color: var(--color-text);
+  justify-content: flex-start;
+  background: none;
+  &:hover {
+    background-color: var(--color-hover);
+  }
+}
