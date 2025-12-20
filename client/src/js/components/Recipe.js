@@ -5,6 +5,8 @@ const mealSelect = document.getElementById("mealType");
 const difficultySelect = document.getElementById("difficulty");
 const searchInput = document.querySelector(".recipeSearch");
 
+const modal = document.getElementById("recipe-modal");
+
 let recipes = [];
 
 export async function initRecipes() {
@@ -31,8 +33,8 @@ function renderRecipes(data) {
                 <h3 class="recipe__card-cuisine">Cuisine: ${recipe.cuisine}</h3>
                 <ul class="recipe__card-info">
                   <li class="icon-wrapper"><i class="fa-solid fa-user"></i> Servings: <span>${recipe.servings}</span></li>
-                  <li class="icon-wrapper"><i class="fa-solid fa-alarm-clock"></i> Prep: <span>${recipe.prepTimeMinutes}</span></li>
-                  <li class="icon-wrapper"><i class="fa-solid fa-fire-burner"></i> Cook: <span>${recipe.prepTimeMinutes}</span></li>
+                  <li class="icon-wrapper"><i class="fa-solid fa-alarm-clock"></i> Prep: <span>${recipe.prepTimeMinutes} min</span></li>
+                  <li class="icon-wrapper"><i class="fa-solid fa-fire-burner"></i> Cook: <span>${recipe.prepTimeMinutes} min</span></li>
                   
                 </ul>
                 <button class="btn btn-primary" id="recipeBtn" data-id="${recipe.id}">View Recipe</button>
@@ -44,9 +46,57 @@ function renderRecipes(data) {
 }
 
 // Recipe Modal
+recipeList.addEventListener("click", (e) => {
+  const btn = e.target.closest("#recipeBtn");
+  if (!btn) return;
+
+  const recipeId = Number(btn.dataset.id);
+  const recipe = recipes.find((r) => r.id === recipeId);
+
+  openModal(recipe);
+});
+
 function openModal(recipe) {
-    
+  const modalWrapper = document.querySelector(".modal__wrapper");
+
+  modalWrapper.innerHTML = "";
+
+  const modalContent = document.createElement("div");
+  modalContent.className = "modal__card";
+
+  modalContent.innerHTML = `
+  <div class="img-wrapper"><img src="${recipe.image}" alt="${recipe.name}" class="modal__card-image"/></div>
+  <div class="modal__card-content">
+    <div class="modal__card-wrapper">
+        <h2 class="modal__card-title">${recipe.name}</h2>
+      <h3 class="modal__card-cuisine">Cuisine: ${recipe.cuisine}</h3>
+    </div>
+    <ul class="modal__card-info">
+      <li class="icon-wrapper"><i class="fa-solid fa-user"></i> Servings: <span>${recipe.servings}</span></li>
+      <li class="icon-wrapper"><i class="fa-solid fa-alarm-clock"></i> Prep: <span>${recipe.prepTimeMinutes} min</span></li>
+      <li class="icon-wrapper"><i class="fa-solid fa-fire-burner"></i> Cook: <span>${recipe.prepTimeMinutes} min</span></li>
+      <li class="icon-wrapper"><i class="fa-solid fa-hand-fist"></i> Diffuculty: <span>${recipe.difficulty}</span></li> 
+      <li class="icon-wrapper"><i class="fa-solid fa-utensils"></i> Calories: <span>${recipe.caloriesPerServing} Ccal</span></li> 
+      <li class="icon-wrapper"><i class="fa-solid fa-star"></i> Rating: <span>${recipe.rating}</span></li> 
+      <li class="icon-wrapper"><i class="fa-solid fa-comments"></i> Reviews: <span>${recipe.reviewCount}</span></li> 
+      <li class="icon-wrapper"><i class="fa-solid fa-font-awesome"></i> Meal Type: <span>${recipe.mealType}</span></li> 
+    </ul>
+    <p class="modal__card-ingridients">Ingridients: ${recipe.ingredients}</p>
+    <p class="modal__card-instructions">Instructions: ${recipe.instructions}</p>
+
+    <button class="btn btn-primary" id="recipeModalClose" type="button">Close</button>
+    </div>
+    `;
+
+  modalWrapper.appendChild(modalContent);
+  modal.classList.add("active");
 }
+
+modal.addEventListener("click", (e) => {
+  if (e.target.closest("#recipeModalClose")) {
+    modal.classList.remove("active");
+  }
+});
 
 // Filter Recipes
 function filterRecipes() {
