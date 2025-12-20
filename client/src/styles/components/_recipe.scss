@@ -1,0 +1,125 @@
+main {
+  position: relative;
+}
+
+.recipe {
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 30%;
+      min-width: 300px;
+      @media (max-width: 480px) {
+        width: 100%;
+        flex-direction: column;
+      }
+      select {
+        background-color: #ffffff;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 1.125rem;
+        border: 1px solid var(--color-muted);
+        outline: none;
+        width: 100%;
+        // appearance: none;
+      }
+    }
+
+    &-right {
+      background-color: #ffffff;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      width: 40%;
+      border: 1px solid var(--color-muted);
+
+      @media (max-width: 480px) {
+        width: 100%;
+      }
+
+      i {
+        font-size: 1.125rem;
+        color: var(--color-muted);
+      }
+
+      .recipeSearch {
+        font-size: 1.125rem;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+
+        &::placeholder {
+          color: var(--color-muted);
+        }
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 1rem;
+    &-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    &-content {
+      padding: 0rem 1rem 1rem 1rem;
+
+      button {
+        width: 100%;
+      }
+    }
+    &-title {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--color-green-100);
+    }
+
+    &-cuisine {
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    &-info {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      li {
+        font-size: 1.125rem;
+
+        i {
+          color: var(--color-green-100);
+        }
+      }
+    }
+  }
+}

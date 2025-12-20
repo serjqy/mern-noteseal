@@ -1,8 +1,17 @@
+html {
+  font-family: var(--font-main);
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+  background-color: var(--bg-screen-white);
+  color: var(--color-text-dark);
+}
+
 .container {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  // padding: 0 1rem;
+  padding: 0 1rem;
 
   // Tablet / small laptop
   @media (max-width: 1024px) {
@@ -26,28 +35,35 @@
   gap: 0.25rem;
 }
 
+.img-wrapper {
+  padding: 0.5rem;
+}
+
 .btn {
   font-family: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
   border: none;
   outline: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-primary {
-  justify-content: center;
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-green-100);
+  color: var(--color-text-white);
+
+  &:hover {
+    background-color: var(--color-green-200);
+    color: var(--color-text-white);
+  }
 }
 
-.btn-secondary {
-  color: var(--color-text);
-  justify-content: flex-start;
-  background: none;
-  &:hover {
-    background-color: var(--color-hover);
+#btnMenu {
+  display: none;
+
+  @media (max-width: 480px) {
+    display: inline;
   }
 }

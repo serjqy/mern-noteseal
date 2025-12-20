@@ -1,0 +1,10 @@
+// Base
+@use "./styles/base/reset";
+@use "./styles/base/base";
+@use "./styles/base/variables";
+
+// Components
+@use "./styles/components/header";
+@use "./styles/components/hero";
+@use "./styles/components/recipe";
+@use "./styles/components/modal";

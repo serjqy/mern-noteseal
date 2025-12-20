@@ -1,0 +1,18 @@
+.hero {
+  margin-bottom: clamp(1rem, 7vw, 6.25rem);
+
+  &__wrapper {
+    text-align: center;
+  }
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--color-green-100);
+  }
+  &__description {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 150%;
+  }
+}

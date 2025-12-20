@@ -1,10 +1,19 @@
 :root {
-  --font-main: "Inter", sans-serif;
+  --bg-screen-dark: #181920;
+  --bg-screen-white: #f6f5f1;
 
-  --color-primary: #ffffff;
-  --color-secondary: #325cfe;
+  --bg-dark: #22222c;
 
-  --color-text: #101010;
-  --color-muted: #a2a5ac;
-  --color-hover: #f4f5f9;
+  --color-green-100: #135e4b;
+  --color-green-200: #4cb572;
+  --color-green-300: #a1d8b5;
+  --color-green-400: #ccdcdb;
+
+  --color-hover: #ffad79;
+  --color-muted: #a3a3a3;
+
+  --color-text-white: #ffffff;
+  --color-text-dark: #101010;
+
+  --font-main: "Outfit", sans-serif;
 }

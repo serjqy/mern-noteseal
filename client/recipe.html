@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Seal - Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/60c94ed1cd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper container">
+        <div class="header__logo">
+          <a href="/index.html" class="header__logo__link icon-wrapper">
+            <i class="fa-solid fa-bowl-food"></i> <span>Meal Seal</span></a
+          >
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="/index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="/about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="/recipe.html" class="nav__link">Recipes</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="btn btn-secondary" id="btnMenu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <div class="hero__wrapper container">
+          <h1 class="hero__title">Explore our simple, healthy recipes</h1>
+          <p class="hero__description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Exercitationem itaque iusto voluptate, aliquid magnam dolore totam
+            modi blanditiis quaerat eum facere nobis quis illum repellendus iure
+            iste quidem quam accusantium qui. Alias sapiente magni similique.
+          </p>
+        </div>
+      </section>
+      <section class="recipe">
+        <div class="recipe__wrapper container">
+          <div class="recipe__controls">
+            <div class="recipe__controls-left">
+              <select id="mealType">
+                <option value="all">Meal Type</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+                <option value="appetizer">Appetizer</option>
+                <option value="beverage">Beverage</option>
+              </select>
+              <select id="difficulty">
+                <option value="all">Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+              </select>
+            </div>
+            <div class="recipe__controls-right icon-wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                placeholder="Search by name..."
+                class="recipeSearch"
+              />
+            </div>
+          </div>
+          <div class="recipe__list">
+            <!-- Cards -->
+          </div>
+        </div>
+      </section>
+      <div class="modal" id="recipe-modal">
+        <div class="modal__wrapper container">
+          <h1>123</h1>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
